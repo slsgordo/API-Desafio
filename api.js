@@ -8,7 +8,10 @@ APi.get('/calculador/somar/:n1/:n2', (req, resp) => {
     let n2 = Number(req.params.n2)
 
     let soma = n1 + n2
+
     resp.send({
+        val1 :n1,
+        val2 :n2,
         res : soma
     })
 })  
@@ -16,9 +19,38 @@ APi.get('/calculador/somar/:n1/:n2', (req, resp) => {
 APi.get('/calculador/subtrair/:n1/:n2', (req, resp) => {
     let n1 = Number(req.params.n1)
     let n2 = Number(req.params.n2)
-
+    
     let sub = n1 - n2
+
     resp.send({
-        res : sub
+        val1 :n1,
+        val2 :n2,
+        res :sub
+    })
+}) 
+
+APi.get('/calculador/multiplicar/:n1/:n2', (req, resp) => {
+    let n1 = Number(req.params.n1)
+    let n2 = Number(req.params.n2)
+
+    let mult = n1 * n2
+    
+    resp.send({
+        val1 :n1,
+        val2 :n2,
+        res : mult
+    })
+}) 
+
+APi.get('/calculador/dividir/:n1/:n2', (req, resp) => {
+    let n1 = Number(req.params.n1)
+    let n2 = Number(req.params.n2)
+
+    let div = n1 / n2
+
+    resp.send({
+        val1 :n1,
+        val2 :n2,
+        res : div
     })
 }) 
